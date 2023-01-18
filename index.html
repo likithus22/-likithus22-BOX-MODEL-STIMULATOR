@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #mb{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        
+        #model{
+            display: block;
+        }
+
+        .shb{
+            border: none;
+            margin: auto;
+        }
+
+        #ws{
+            border: 2px solid red;
+            height: 50vh;
+            width: 50vw;
+            margin-top: 30px;
+            /* display: flex; */
+            /* align-items: center;
+            justify-content: center; */
+        }
+        
+        #pv{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2x;
+            margin-bottom: 2px;
+            margin-right: 2px;
+            margin-left: 2px;
+            height: 100px;
+            width: 100px;
+            padding-top: 2x;
+            padding-bottom: 2px;
+            padding-right: 2px;
+            padding-left: 2px;
+            border-top-width: 2px ;
+            border-bottom-width: 2px ;
+            border-right-width: 2px ;
+            border-left-width: 2px ;
+            border-style: solid;
+            border-color: red;
+            background-color: cyan;
+        }
+
+        #ui{
+            margin-top: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .structure{
+            margin: 15px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        label{
+            margin-left: 20px;
+        }
+        input{
+            margin-left: 10px;
+        }
+        </style>
+</head>
+<body>
+    <div id="mb">
+        <h1>BOX MODEL STIMULATION</h1>
+    </div>
+    <div id="model">
+        <div class="shb" id="ws">
+            <div id="pv">
+                <h4>PREVIEW</h4>
+            </div>
+        </div>
+    </div>
+
+    <div id="ui">
+        <form action="post">
+            <div id="pra1" class="structure" >
+                <label for="mar1"> margin-top </label>
+                <input type="text" name="margin1" id="mar1" onchange="prew(`mar1`,`margin-top`)">
+                <label for="mar2"> margin-right </label>
+                <input type="text" name="margin2" id="mar2"  onchange="prew(`mar2`,`margin-right`)">
+                <label for="mar3"> margin-bottom </label>
+                <input type="text" name="margin3" id="mar3"  onchange="prew(`mar3`,`margin-bottom`)">
+                <label for="mar4"> margin-left </label>
+                <input type="text" name="margin4" id="mar4"  onchange="prew(`mar4`,`margin-left`)">
+            </div>
+            <div id="pra2" class="structure" > 
+                <label for="pa1"> padding-top </label>
+                <input type="text" name="padding1" id="pa1"  onchange="prew(`pa1`,`padding-top`)">
+                <label for="pa2"> padding-right </label>
+                <input type="text" name="padding2" id="pa2"  onchange="prew(`pa2`,`padding-right`)">
+                <label for="pa3"> padding-bottom </label>
+                <input type="text" name="padding3" id="pa3" onchange="prew(`pa3`,`padding-bottom`)">
+                <label for="pa4"> padding-left </label>
+                <input type="text" name="padding4" id="pa4" onchange="prew(`pa4`,`padding-left`)">
+            </div>
+            <div id="pra3" class="structure" > 
+                <label for="bo1"> border-top </label>
+                <input type="text" name="border1" id="bo1" onchange="prew(`bo1`,`border-top-width`)">
+                <label for="bo2"> border-right </label>
+                <input type="text" name="border2" id="bo2" onchange="prew(`bo2`,`border-right-width`)">
+                <label for="bo3"> border-bottom </label>
+                <input type="text" name="border3" id="bo3"onchange="prew(`bo3`,`border-bottom-width`)">
+                <label for="bo4"> border-left </label>
+                <input type="text" name="border4" id="bo4"onchange="prew(`bo4`,`border-left-width`)">
+            </div>
+            <div id="pra4" class="structure" >
+                <label for="hei"> height </label>
+                <input type="text" name="height" id="hei" onchange="prew(`hei`,`height`)">
+                <label for="wid"> width </label>
+                <input type="text" name="width" id="wid" onchange="prew(`wid`,`width`)">
+            </div>
+            <div id="pra5" class="structure">
+                <label for="rst">CLICK FOR RESTING IT TO INITIAL VALUES</label>
+                <input type="reset" id="rst" value="reset" style="height: 30px; width:100px" onclick="document.location.reload(true)">
+            </div>
+        </form>
+    </div>
+    <script>
+        const prew = (re,pro) =>{
+            const a = document.getElementById(re).value;
+            const b = typeof(a);
+            console.log(re);
+            console.log(pro);
+            console.log(b);
+            console.log(a);
+            let fi = a + "px";
+            console.log(fi);
+            const pb = document.getElementById("pv");
+            console.log(pb);
+            pb.style[pro] = fi;
+        }
+
+
+    </script>
+</body>
+</html>
