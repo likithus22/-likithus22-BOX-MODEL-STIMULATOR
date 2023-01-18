@@ -1,1 +1,0 @@
-# -likithus22-BOX-MODEL-STIMULATOR
